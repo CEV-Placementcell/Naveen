@@ -96,10 +96,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'placement',  # Your database name
-        'HOST': 'localhost',
+        'HOST': 'cev-db.cls4qasg4cxu.eu-north-1.rds.amazonaws.com',
         'PORT': '3306',
-        'USER': 'root',
-        'PASSWORD': '',  # No password
+        'USER': 'admin',
+        'PASSWORD': 'Naveen2002',  # No password
     }
 }
 
