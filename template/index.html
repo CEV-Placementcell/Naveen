@@ -1,0 +1,586 @@
+{% load static %}
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>College of Engineering Vadakara, Kozhikode </title>
+
+    <!-- CSS FILES -->
+
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/indexcss.css' %}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.js'%}"></script>
+    <style>
+        a:link {
+            text-decoration: none;
+        }
+
+        footer {
+            background: linear-gradient(to bottom, #771f1f, var(--dark-color), transparent 200%);
+        }
+
+        .img1 {
+            position: absolute;
+            width: 40%;
+            z-index: 1;
+
+        }
+
+        .img2 {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            z-index: 2;
+        }
+
+        .navbar-light .navbar-toggler {
+            color: #771f1f;
+            border-color: #771f1f;
+        }
+
+        .marquee-alternative {
+            overflow: clip;
+            width: 100%;
+        }
+
+        .marquee-alternative p {
+            margin: 0;
+            width: fit-content;
+            animation: marquee 20s linear infinite;
+        }
+
+
+        @keyframes marquee-right-to-left {
+            from {
+                transform: translateX(100vw);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+
+
+        .marquee-alternative:hover p,
+        .marquee-alternative:focus p {
+            animation-play-state: paused;
+        }
+
+
+        @media (prefers-reduced-motion: no-preference) {
+            .marquee-alternative p {
+                animation: marquee-right-to-left 20s linear infinite;
+                animation-name: marquee-right-to-left;
+                animation-duration: 20s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+
+        .row {
+            --bs-gutter-x: 0;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        .col {
+            padding: 10px;
+        }
+
+        .count-number::after {
+            content: "+";
+            margin-left: 5px;
+        }
+
+        .logos {
+            align-items: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+
+
+    <!--Mobile Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #771f1f;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="{% static 'images/logo-white.png' %}"
+                    style="width: 250px; height: auto;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link activeh text-white" style="border-radius: 8px;" aria-current="page"
+                            href="/"><b>&nbsp;Home</b></a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link text-white" style="border-radius: 8px;" href="#Aboutus"><b>&nbsp;About Us</b></a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="border-radius: 8px;"
+                        href="{% url 'registration' %}"><b>&nbsp;Registration</b></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <b>&nbsp;Login</b>
+                        </a>
+                        <ul class="dropdown-menu" style="background: #771f1f; border-radius: 8px;"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item text-white" href="{% url 'studlogin' %}"><b>Student</b></a></li>
+                            <li><a class="dropdown-item text-white" href="{% url 'techlogin' %}"><b>Tech Team</b></a></li>
+                            <!-- <li><a class="dropdown-item text-white" href="{% url 'adminlogin' %}"><b>Admin</b></a></li> -->
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="border-radius: 8px;"
+                            href="{% url 'gallery' %}"><b>&nbsp;Gallery</b></a>
+                    </li>
+                    
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="border-radius: 8px;" href="{% url 'testimonials' %}"><b>&nbsp;Testimonials</b></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="border-radius: 8px;" href="{% url 'drive' %}"><b>&nbsp;Drives</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="border-radius: 8px;" href="#Contact"><b>&nbsp;Contact Us</b></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <style>body {
+        padding-top: 110px; /* Adjust based on navbar height */
+    }</style>
+    <!--Mobile Navbar-->
+    
+    
+    <div style="position: relative; width: 100%; height: auto;">
+        <!-- STC Image -->
+        <div style="position: relative; width: 100%;">
+            <img src="{% static 'images/stc.jpeg' %}" alt="STC Image" style="width: 100%; opacity: 0.9;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6);"></div>
+        </div>
+        
+    
+        <!-- Textbox and Button overlay -->
+        <div class="overlay-content">
+            <h5 class="animated-text" style="font-weight: bold; font-size: 26px; margin-bottom: 10px; 
+            text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;">
+     College of Engineering Vadakara
+ </h5>
+            <h3 class="animated-text"style="font-weight: bold; font-size: 44px; margin-bottom: 20px; 
+            text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black;">
+     Placement Cell
+ </h3>
+            <img src="{% static 'images/newlogo.png' %}" alt="Placement Logo" class="animated-logo" style="width: 200px; height: auto; margin-bottom: 20px;">
+            <br>
+            <a href="registration" class="btn btn-light animated-button" style="border-radius: 8px; padding: 10px 30px; font-size: 18px; margin-top: 20px; display: inline-block; border: 2px solid black;">Register Here</a>
+        </div>
+    </div>
+    
+    <style>
+        .overlay-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            opacity: 0;
+        }
+    
+        .animated-text, .animated-logo, .animated-button {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(() => {
+                document.querySelector(".overlay-content").style.opacity = "1";
+                document.querySelectorAll(".animated-text, .animated-logo, .animated-button").forEach(el => {
+                    el.style.opacity = "1";
+                    el.style.transform = "translateY(0)";
+                });
+            }, 500);
+        });
+    </script>
+    
+    <div class="marquee-alternative alert alert-light" role="alert">
+        <p style="font-weight: bold;">
+            <span style="color: red;">Notifications:</span>&nbsp;&nbsp;
+            {% for n in notifify %}
+                <span style="color: red;">**</span>&nbsp;
+                {{ n.notify }}&nbsp;&nbsp;&nbsp;&nbsp;
+            {% endfor %}
+        </p>
+    </div>
+    
+    <br>
+    
+    <div style="text-align: center;">
+        <h4 style="font-weight: bolder;"><a id="Aboutus">ABOUT US</a></h4>
+    </div><br>
+    
+    <div style="padding: 20px;">
+        <p align="justify">
+            The Training and Placement Cell at College of Engineering Vadakara plays a vital role in shaping the careers of our students. Our mission is to provide our students with the necessary skills, training, and exposure to excel in the industry. 
+            We achieve this through a range of initiatives, including soft skills training, technical workshops, industry guest lectures, and internship programs. 
+            Our team works closely with industry partners to understand their requirements and tailor our training programs to meet their needs.<br><br>
+    
+            The placement cell has an impressive track record of placing our students in top companies across various sectors. 
+            We have established strong relationships with leading companies, including Infosys, TCS, UST global, etc to provide our students with a wide range of job opportunities. 
+            Our placement process is transparent, efficient, and student-friendly, ensuring that our students are well-prepared to take on the challenges of the industry. 
+            We are proud of our placement statistics and look forward to continuing our efforts to provide our students with the best possible career outcomes.
+        </p>
+    </div>
+    
+    <br>
+
+    <br>
+    <!--Placement Co-ordinators-->
+    <section class="container py-5">
+    <div style="text-align: center;">
+        <h3 style="font-weight: bolder;">OUR TEAM</h3>
+    </div>
+    <style>
+        
+    </style>
+    <div class="row text-cen">
+        <!-- Profile Cards -->
+        <div class="col-md-4 mb-4">
+            <div class="profile-card">
+                <img src="{% static 'images/P3.jpeg' %}" alt="Profile Image" class="img-fluid">
+                <p class="mt-2">Dr. Sujith S <br>( Placement Officer )</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="profile-card">
+                <img src="{% static 'images/P1.jpg' %}" alt="Profile Image" class="img-fluid">
+                <p class="mt-2">Mr. Shijith K<br>( Assistant Placement Officer )</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="profile-card">
+                <img src="{% static 'images/P2.jpeg' %}" alt="Profile Image" class="img-fluid">
+                <p class="mt-2">Mrs. Radhika Kaliyarthodi<br>( Placement Training Officer )</p>
+            </div>
+            
+        </div>
+    </div>
+    </section>
+
+    <br>
+
+
+
+
+    <!--sliding posters-->
+
+    <div style="text-align: center;">
+        <h3 style="font-weight: bolder;">RECRUITERS</h3>
+    </div>
+    <br>
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" style="display: flex;">
+            <div class="carousel-item active">
+                <div class=" logos row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-50" style="border-color: transparent; border-radius: 8px;">
+                            <img src="{% static 'images/efeone.png' %}" class="card-img"
+                                style="height: 10rem; width: auto;" alt="...">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-50"
+                            style="border-color: transparent; border-radius: 8px; align-items: center;">
+                            <img src="{% static 'images/tvs.png' %}" class="card-img"
+                                style="height: 10rem; width: auto;" alt="...">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-50" style="border-color: transparent; border-radius: 8px;">
+                            <img src="{% static 'images/img 3.png' %}" class="card-img"
+                                style="height: 10rem; width: auto;" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="logos row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-50" style="border-color: transparent; border-radius: 8px;">
+                            <img src="{% static 'images/img 4.jpeg' %}" class="card-img"
+                                style="height: 10rem; width: auto;" alt="...">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-50" style="border-color: transparent; border-radius: 8px;">
+                            <img src="{% static 'images/img 5.png' %}" class="card-img"
+                                style="height: 10rem; width: auto;" alt="...">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-50" style="border-color: transparent; border-radius: 8px;">
+                            <img src="{% static 'images/img 6.png' %}" class="card-img"
+                                style="height: 10rem; width: auto;" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="logos row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-50" style="border-color: transparent; border-radius: 8px;">
+                            <img src="{% static 'images/img 7.png' %}" class="card-img"
+                                style="height: 10rem; width: auto;" alt="...">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-50" style="border-color: transparent; border-radius: 8px;">
+                            <img src="{% static 'images/img 3.png' %}" class="card-img"
+                                style="height: 10rem; width: auto;" alt="...">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-50" style="border-color: transparent; border-radius: 8px;">
+                            <img src="{% static 'images/img 6.png' %}" class="card-img" 
+                            style="height: 10rem; width: auto;" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <br><br>
+
+
+<!-- Testimonials Section -->
+<section class="container py-5">
+    <div style="text-align: center;">
+        <h3 style="font-weight: bolder;">TESTIMONIALS</h3>
+    </div><br>
+
+
+    <style>
+        .testimonial-container {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .review {
+            background: #ebe9e9;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+            text-align: center;
+            transition: transform 0.5s ease-in-out;
+            min-width: 30%;
+        }
+
+        .review:hover {
+            transform: scale(1.05);
+        }
+
+        .review img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #ff5733;
+        }
+
+        .review p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .review p.text-muted {
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+
+    <div class="testimonial-container" id="testimonialSlider">
+        <div class="review">
+            <img src="{% static 'images/T1.jpg' %}" alt="Testimonial 1">
+            <p class="mt-2"><strong>Niranjen P</strong><br>2017 Batch, Computer Science and Engineering</p>
+            <p class="text-muted">"I’m really grateful to the Training and Placement Cell at College of Engineering Vadakara for their support throughout my placement journey. Their training programs and career guidance helped me a lot in preparing for job opportunities.
+                Thanks to their efforts, I got placed at 6d Technologies, which turned out to be a great starting point for my career in the telecom industry. Working there as a Software Engineer opened a lot of opportunities for me, allowing me to work on large-scale applications and improve my technical skills. Additionally, I appreciate the guidance I received from my tutor, whose insights helped me make informed decisions about my career path.
+               
+                "</p>
+        </div>
+        <div class="review">
+            <img src="{% static 'images/T2.jpg' %}" alt="Testimonial 2">
+            <p class="mt-2"><strong>Varunraj</strong><br>2004 Batch, Electronics & Communication Engineering</p>
+            <p class="text-muted">“I am immensely grateful to the Training and Placement Cell at college of engineering vadakara for their exceptional support and guidance throughout my career journey. Their dedication to providing placement opportunities played a crucial role in shaping my professional path.
+                With their expertise and strong industry connections, I was able to secure a position at a prestigious multinational company in bangalore and later I got the opportunity to change my job and joined Apple in USA . The placement team’s assistance helped me with the confidence and skills needed to excel in the global job market."</p>
+        </div>
+        <div class="review">
+            <img src="{% static 'images/T3.jpg' %}" alt="Testimonial 3">
+            <p class="mt-2"><strong>Govind K R</strong><br>2015 Batch, Computer Science & Engineering</p>
+            <p class="text-muted">"I am incredibly grateful to the Training and Placement Cell at College of Engineering Vadakara for their exceptional support and guidance in shaping my career. Their dedicated efforts helped me secure my first job at Infosys as a Full Stack Developer, where I gained invaluable experience and grew into a professional. The structured training sessions, industry interactions, and placement opportunities provided by the cell were instrumental in preparing me for the corporate world. I truly appreciate their unwavering commitment to student success and wholeheartedly thank them for their continuous support."</p>
+        </div>
+        <div class="review" style="display: none;">
+            <img src="{% static 'images/T4.jpg' %}" alt="Testimonial 4">
+            <p class="mt-2"><strong>Arathi Narayanan</strong><br>2017 Batch, Information Technology</p>
+            <p class="text-muted">"I am immensely grateful to the Training & Placement Cell at College of Engineering Vadakara for their invaluable support in helping me secure my first job at Cognizant. Their dedicated efforts in conducting aptitude training, technical sessions, and mock interviews greatly enhanced my skills and confidence. The placement team worked tirelessly to connect students with top recruiters, ensuring we were well-prepared for the industry. I truly appreciate their guidance and encouragement, which played a vital role in shaping my career."</p>
+        </div>
+    </div>
+
+    <script>
+        function rotateTestimonials() {
+            let container = document.getElementById("testimonialSlider");
+            let reviews = container.children;
+
+            // Hide all reviews first
+            for (let i = 0; i < reviews.length; i++) {
+                reviews[i].style.display = "none";
+            }
+
+            // Show only first 3 reviews
+            for (let i = 0; i < 3; i++) {
+                reviews[i].style.display = "block";
+            }
+
+            // Move first element to the end for rotation
+            container.appendChild(reviews[0]);
+        }
+
+        setInterval(rotateTestimonials, 3000);
+    </script>
+</section>
+
+
+    <a id="Contact">
+    <br>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="#" class="me-4 text-reset">
+                    <i class="fa fa-facebook-official" style="font-size:24px"></i>
+                </a>
+                <a href="#" class="me-4 text-reset">
+                    <i class="fa fa-instagram" style="font-size:24px"></i>
+                </a>
+                <a href="#" class="me-4 text-reset">
+                    <i class="fa fa-twitter" style="font-size:24px"></i>
+                </a>
+                <a href="#" class="me-4 text-reset">
+                    <i class="fa fa-youtube-play" style="font-size:24px"></i>
+                </a>
+                <a href="#" class="me-4 text-reset">
+                    <i class="fa fa-linkedin-square" style="font-size:24px"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h3 class="text-uppercase fw-bold mb-4"><b>
+                                Placement Cell</b>
+                        </h3>
+                        <p>
+                            <b>Location:</b><br>
+                            College of Engineering Vadakara<br>
+                            Mandarathur - 673541, Kerala, India
+                            <br><br>
+                            <!-- <a href="https://maps.app.goo.gl/RQiJvmgnb86huAre9" target="_blank" class="btn btn-light" style="border-radius: 8px;">Direction</a> -->
+
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4"><b>Contact</b></h6>
+                        <p><i class="fa fa-home me-3"></i>Kurunthodi - College Rd</p>
+                        <p><i class="fa fa-envelope me-3"></i>placements@cev.ac.in</p>
+                        <p><i class="fa fa-phone me-3"></i>+91 9645350856</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4">
+            <a class="text-reset fw-bold" href="#">
+                Placement Cell<br>College of Engineering 
+                Vadakara, Kozhikode
+            </a>
+            <br>
+            <!-- <span class="text-reset">
+                All rights reserved by <a href="https://robin-joney.github.io/portfolio" target="_blank" class="text-reset fw-bold">RJ</a>
+                <i class="fa fa-copyright" aria-hidden="true"></i>
+            </span> -->
+        </div>
+        
+       
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+
+
+</body>
+
+</html>

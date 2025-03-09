@@ -1,0 +1,251 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Admin Cards - Placement Cell College of Engineering Vadakara, Kozhikode</title>
+
+        <!-- CSS FILES -->    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">                    
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'css/indexcss.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+        a:link {
+            text-decoration: none;
+        }
+
+        footer {
+            background: linear-gradient(to bottom, #771f1f, var(--dark-color), transparent 200%);
+        }
+
+        .navbar-light .navbar-toggler {
+            color: #771f1f;
+            border-color: #771f1f;
+        }
+
+        .card {
+            border-radius: 15px;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        }
+
+        .btn-custom {
+            border-radius: 15px;
+            background-color: #771f1f;
+            border: #771f1f;
+            font-weight: bold;
+            color: white;
+        }
+        </style>
+
+    </head>
+
+    <body>
+
+    <!--Mobile Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #771f1f;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="{% static 'images/logo-white.png' %}"
+                    style="width: 250px; height: auto;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav" style="font-weight: bolder;">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="border-radius: 8px;" aria-current="page"
+                            href="{% url 'admininter' %}">&nbsp;Dashboard</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <b>&nbsp;Content</b>
+                        </a>
+                        <ul class="dropdown-menu" style="background: #771f1f; border-radius: 8px;"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item text-white" href="{% url 'drivecontentadm' %}"><b>Drive Content</b></a></li>
+                            <li><a class="dropdown-item text-white" href="{% url 'eventcontentadm' %}"><b>Event Content</b></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="border-radius: 8px;"
+                            href="{% url 'posteruploadadm' %}">&nbsp;Poster</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="activeh nav-link text-white" href="{% url 'admcard' %}">Testimonials</a>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <b>&nbsp;Drives & Events</b>
+                        </a>
+                        <ul class="dropdown-menu" style="background: #771f1f; border-radius: 8px;"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item text-white" href="{% url 'addrive' %}"><b>All Drives</b></a></li>
+                            <li><a class="dropdown-item text-white" href="{% url 'ongoingdrive' %}"><b>Ongoing Drives</b></a></li>
+                            <li><a class="dropdown-item text-white" href="{% url 'eventslist' %}"><b>Events</b></a></li>
+                        
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="border-radius: 8px;"
+                            href="{% url 'techteam' %}">&nbsp;Tech Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="border-radius: 8px;" href="{% url 'adminnotification' %}">&nbsp;Notifications</a>
+                    </li>
+                    
+                    
+                    <!-- <li class="nav-item">
+                        <a class="nav-link text-white" style="border-radius: 8px;" href="{% url 'adminlogout' %}">&nbsp;Logout</a>
+                    </li> -->
+
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="desktop" style="width:10%;float:right;margin-top:10px;margin-right:100px;" > 
+            <button type="button" class="btn btn-primary text-white ms-2" onclick="window.location.href='{% url 'adminlogout' %}'"
+            style="border-radius: 15px; background-color: #a93636; border: #a93636; font-weight: bold;float:right;">
+            Logout</button>
+        <div>
+    </nav>
+    <!--Mobile Navbar-->
+
+    <div class="container my-3">
+        <div class="card mb-5" style="border-radius: 15px; box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">
+            <div class="card-body p-4">
+                <h3 style="font-weight:bold;">Upload Testimonials</h3>
+    
+                <form action="{% url 'admcard' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group row mb-3">
+                        <label class="col-sm-2 col-form-label">Choose File:</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" name="card_image" accept="image/*" required>
+                        </div>
+                    </div>
+                    <div style="padding-top: 10px; margin-bottom: 20px;">
+                        <button type="submit" class="btn text-white" style="border-radius: 15px; background-color: #771f1f; border: #771f1f; font-weight: bold;">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <div style="overflow-x:auto;">
+        <div class="container mt-3">
+            <table class="table table-bordered table-striped" style="border-color: #771f1f;">
+                <thead class="thead-dark text-white" style="font-weight:bold;background: #771f1f;">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">View</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    {% for card in cards %}
+                    <tr>
+                        <td>{{ card.id }}</td>
+                        <td><img src="{{ card.image.url }}" alt="Uploaded Image" style="width: 100px; height: auto;"></td>
+                        <td><a href="{{ card.image.url }}" target="_blank" class="btn btn-primary text-white" style="background-color: #771f1f; border: #771f1f;">View</a></td>
+                        <td><a href="{% url 'delete_image' card.id %}" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4" class="text-center">No Testimonials found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+
+    <!-- Footer -->
+<footer class="text-center text-lg-start text-white">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+        </div>
+
+        <div>
+            <a href="#" class="me-4 text-reset">
+                <i class="fa fa-facebook-official" style="font-size:24px"></i>
+            </a>
+            <a href="#" class="me-4 text-reset">
+                <i class="fa fa-instagram" style="font-size:24px"></i>
+            </a>
+            <a href="#" class="me-4 text-reset">
+                <i class="fa fa-twitter" style="font-size:24px"></i>
+            </a>
+            <a href="#" class="me-4 text-reset">
+                <i class="fa fa-youtube-play" style="font-size:24px"></i>
+            </a>
+            <a href="#" class="me-4 text-reset">
+                <i class="fa fa-linkedin-square" style="font-size:24px"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h3 class="text-uppercase fw-bold mb-4"><b>
+                            Placement Cell</b>
+                    </h3>
+                    <p>
+                        <b>Location:</b><br>
+                        College of Engineering Vadakara<br>
+                        Mandarathur - 673541, Kerala, India
+                        <br><br>
+                        <a href="https://maps.app.goo.gl/RQiJvmgnb86huAre9" target="_blank" class="btn btn-light" style="border-radius: 8px;">Direction</a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4"><b>Contact</b></h6>
+                    <p><i class="fa fa-home me-3"></i>Kurunthodi - College Rd</p>
+                    <p>
+                        <i class="fa fa-envelope me-3"></i>
+                        placements@cev.ac.in
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="text-center p-4">
+        <a class="text-reset fw-bold" href="#">
+            Placement Cell<br>College of Engineering
+            Vadakara, Kozhikode
+        </a>
+    </div>
+</footer>
+<!-- Footer -->
+
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/custom.js"></script>
+<script src="{% static 'js/bootstrap.js'%}"></script>
+
+</body>
+</html>
